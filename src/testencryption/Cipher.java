@@ -20,7 +20,7 @@ public abstract class Cipher
     public Cipher(String text)
     {
         // Complete the constructor definition
-        this.message = text;  // ADDEDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD
+        this.message = text;  // ADDEDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD        
     }
 
     public final void encrypt()
@@ -46,6 +46,14 @@ public abstract class Cipher
          * is encoded by calling the decode method
          */
         // Supply the code that will decrypt the encrypted string
+       decrypted_message = new StringBuffer();
+        StringTokenizer words = new StringTokenizer(message);
+        while (words.hasMoreTokens())
+        {
+            String s = words.nextToken();
+            s = decode(s) + " ";
+            decrypted_message.append(s);
+        }    
     }
 
     public String getEncodedMessage()
