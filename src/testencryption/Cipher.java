@@ -1,38 +1,25 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package testencryption;
 
-/**
- *
- * @author aurel
- */
 import java.util.StringTokenizer;
 
-public abstract class Cipher
-{
+public abstract class Cipher {
 
     private String message;
     StringBuffer encrypted_message, decrypted_message;
 
-    public Cipher(String text)
-    {
+    public Cipher(String text) {
         // Complete the constructor definition
-        this.message = text;  // ADDEDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD        
+        this.message = text;  // Construtor.        
     }
 
-    public final void encrypt()
-    {
+    public final void encrypt() {
         /*
          * The message string is tokenized into individual words, and each word is
          * encoded by calling the encode method
          */
         encrypted_message = new StringBuffer();
         StringTokenizer words = new StringTokenizer(message);
-        while (words.hasMoreTokens())
-        {
+        while (words.hasMoreTokens()) {
             String s = words.nextToken();
             s = encode(s) + " ";
             encrypted_message.append(s);
@@ -46,23 +33,22 @@ public abstract class Cipher
          * is encoded by calling the decode method
          */
         // Supply the code that will decrypt the encrypted string
-       decrypted_message = new StringBuffer();
+        
+        // Code to decrypt message.
+        decrypted_message = new StringBuffer();
         StringTokenizer words = new StringTokenizer(message);
-        while (words.hasMoreTokens())
-        {
+        while (words.hasMoreTokens()) {
             String s = words.nextToken();
             s = decode(s) + " ";
             decrypted_message.append(s);
-        }    
+        }
     }
 
-    public String getEncodedMessage()
-    {
+    public String getEncodedMessage() {
         return encrypted_message.toString();
     }
 
-    public String getDecodedMessage()
-    {
+    public String getDecodedMessage() {
         return decrypted_message.toString();
     }
 
