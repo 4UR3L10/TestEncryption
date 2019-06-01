@@ -12,9 +12,12 @@ public class Reverser extends Transpose
     public String reverseText(String word) // CAREFULLLL
     {
         // Complete this method so that it reverses the original string
-        StringBuffer result = new StringBuffer(word);  
-        result.reverse();        
-        return result.toString();
+        StringBuffer result = new StringBuffer(word);
+         
+        
+        result.reverse();
+        
+        return result.toString();        
     }
 
     public String decode(String word)

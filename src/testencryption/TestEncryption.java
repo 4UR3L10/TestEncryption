@@ -32,17 +32,24 @@ public class TestEncryption
         c.decrypt(code);
         code = c.getDecodedMessage();
         output += "The decripted Transpose message is \n" + code + "\n";
-        
-        
-        
-//      // FIX THE PROBLEM.
+                
+        // FIX THE PROBLEM.
+        /*
         c = new Reverser(text);
-        c.encrypt();            
+        c.encrypt(); 
         code = c.getEncodedMessage();        
-        // code = c.reverseText(code);  // Problem cannot acces to a method in the class. 
-        output += "\nReverser\nThe encrypted Reverse message is \n" + code + "\n";
+        code = c.reverseText(code); // Problem cannot acces to a method in the class.
         code = c.decode(code);
-//      // FIX THE PROBLEM.
+        */
+        // FIX THE PROBLEM.
+        
+        Reverser reverseObj = new Reverser(text);
+        reverseObj.encrypt();            
+        code = reverseObj.getEncodedMessage();        
+        code = reverseObj.reverseText(code);   
+        output += "\nReverser\nThe encrypted Reverse message is \n" + code + "\n";
+        code = reverseObj.decode(code);
+      
         output += "The decrypted Reverse message is \n" + code;
         display(output);
     }
