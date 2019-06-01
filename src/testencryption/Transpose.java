@@ -22,5 +22,6 @@ public class Transpose extends Cipher
         StringBuffer result = new StringBuffer(word);  
         result.reverse();
         return result.toString();        
-    }
+    }   
+   
 }

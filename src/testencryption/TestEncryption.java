@@ -29,23 +29,21 @@ public class TestEncryption
         c.encrypt();
         code = c.getEncodedMessage();
         output += "\nTranspose\nThe encrypted Transpose message is \n" + code + "\n";
-        
-        // Problem. Logic.
         c.decrypt(code);
         code = c.getDecodedMessage();
         output += "The decripted Transpose message is \n" + code + "\n";
         
         
         
-//        // FIX THE PROBLEM.
-//        c = new Reverser(text);
-//        c.encrypt();
-//        code = c.getEncodedMessage();
-//        //code = c.reverseText(code);   COMMENTED BY ME FIXXXX
-//        output += "\nReverser\nThe encrypted Reverse message is \n" + code + "\n";
-//        code = c.decode(code);
-//        // FIX THE PROBLEM.
-//        output += "The decrypted Reverse message is \n" + code;
+//      // FIX THE PROBLEM.
+        c = new Reverser(text);
+        c.encrypt();            
+        code = c.getEncodedMessage();        
+        // code = c.reverseText(code);  // Problem cannot acces to a method in the class. 
+        output += "\nReverser\nThe encrypted Reverse message is \n" + code + "\n";
+        code = c.decode(code);
+//      // FIX THE PROBLEM.
+        output += "The decrypted Reverse message is \n" + code;
         display(output);
     }
 
