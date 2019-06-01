@@ -21,19 +21,22 @@ public class TestEncryption
         Cipher c = new Caeser(text);
         c.encrypt();
         code = c.getEncodedMessage();
-        output += "\nCeasar Cipher\nThe encrypted message is \n" + code + "\n";
-        // UNDERSTANDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD 
+        output += "\nCeasar Cipher\nThe encrypted message is \n" + code + "\n";        
         c.decrypt(code);
         code = c.getDecodedMessage();
-        output += "The decrypted message is \n" + code + "\n";
-        // UNDERSTANDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD
-//        c = new Transpose(text);
-//        c.encrypt();
-//        code = c.getEncodedMessage();
-//        output += "\nTranspose\nThe encrypted Transpose message is \n" + code + "\n";
-//        c.decrypt(code);
-//        code = c.getDecodedMessage();
-//        output += "The decripted Transpose message is \n" + code + "\n";
+        output += "The decrypted message is \n" + code + "\n";        
+        c = new Transpose(text);
+        c.encrypt();
+        code = c.getEncodedMessage();
+        output += "\nTranspose\nThe encrypted Transpose message is \n" + code + "\n";
+        
+        // Problem. Logic.
+        c.decrypt(code);
+        code = c.getDecodedMessage();
+        output += "The decripted Transpose message is \n" + code + "\n";
+        
+        
+        
 //        // FIX THE PROBLEM.
 //        c = new Reverser(text);
 //        c.encrypt();
