@@ -1,14 +1,5 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package testencryption;
 
-/**
- *
- * @author aurel
- */
 public class Caeser extends Cipher
 {
 
@@ -24,11 +15,8 @@ public class Caeser extends Cipher
 
     public String decode(String word)
     {
-        // Complete this method so that it decodes the encoded string
-        // return "testtttt";
-        // testing
-        // return code(word, Constants.DECODE_SHIFT);
-        return code(word, Constants.DECODE_SHIFT);
+        // Complete this method so that it decodes the encoded string        
+        return code(word, Constants.DECODE_SHIFT);  // Decoding the ecoded message.
     }
 
     public String code(String word, int SHIFT)
@@ -50,7 +38,7 @@ public class Caeser extends Cipher
             ch = (char) ('A' + (ch - 'A' + shift) % Constants.WRAP_AROUND);
         }
         // Complete the if/else so that lower case letters are accounted for
-        else 
+        else  // Else statement to implement lowercase letters as input.
         {
             ch = (char) ('a' + (ch - 'a' + shift) % Constants.WRAP_AROUND);
         }
