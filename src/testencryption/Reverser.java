@@ -41,6 +41,7 @@ public class Reverser extends Transpose
     {
         // Complete this method so that it reverses the reversed string
                
+        // Revrsing the String to get the original.
         StringBuffer result = new StringBuffer(word);
         result.reverse();        
     

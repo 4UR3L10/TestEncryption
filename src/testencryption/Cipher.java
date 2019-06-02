@@ -26,7 +26,7 @@ public abstract class Cipher {
         }
     }
 
-    public final void decrypt(String message) // FINIshhhhhhhhhhhhhhhhhhhhhhhhhhz
+    public final void decrypt(String message) 
     {
         /*
          * The encoded message string is tokenized into individual words, and each word

@@ -16,15 +16,19 @@ public class TestEncryption
     public static void main(String[] args)
     {
         String code, output = "";
+        
         String text = JOptionPane.showInputDialog("Enter message");
+        
         output += "The original message is \n" + text + "\n";               
+        
         Cipher c = new Caeser(text);
         c.encrypt();
         code = c.getEncodedMessage();
         output += "\nCeasar Cipher\nThe encrypted message is \n" + code + "\n";        
         c.decrypt(code);
         code = c.getDecodedMessage();
-        output += "The decrypted message is \n" + code + "\n";        
+        output += "The decrypted message is \n" + code + "\n";   
+        
         c = new Transpose(text);
         c.encrypt();
         code = c.getEncodedMessage();
@@ -38,18 +42,17 @@ public class TestEncryption
         c = new Reverser(text);
         c.encrypt(); 
         code = c.getEncodedMessage();        
-        code = c.reverseText(code); // Problem cannot acces to a method in the class.
+        code = c.reverseText(code); // Problem: Cannot access the method in the class because c is refering to Cipher.
         code = c.decode(code);
         */
         // FIX THE PROBLEM.
         
-        Reverser reverseObj = new Reverser(text);
+        Reverser reverseObj = new Reverser(text);  // Fixing the problem.
         reverseObj.encrypt();            
         code = reverseObj.getEncodedMessage();        
         code = reverseObj.reverseText(code);   
         output += "\nReverser\nThe encrypted Reverse message is \n" + code + "\n";
-        code = reverseObj.decode(code);
-      
+        code = reverseObj.decode(code);      
         output += "The decrypted Reverse message is \n" + code;
         display(output);
     }
